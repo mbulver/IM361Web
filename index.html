@@ -4,53 +4,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Planmo- Home</title>
-     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div id="app">
-      {{ message }}
-      <br>
-      <p></p>Current Tasks: {{tasks}}
-      <br>
-      Completed Tasks: {{completed_tasks}}
+
+    <!-- This section is dedicated to creating a new schedule -->
+<div class="ScheduleCreation">
+  <!--This section is dedicated to selecting a Reminji for the new calendar -->
+    <div class="ReminjiSelection">
+    <h1>Choose A Reminji</h1>
+    <p>This little critter is going to help you keep track of your schedule! Make sure you keep up to date on your tasks in order to keep it happy and healthy!</p>
+          <!-- Full-width images with number and caption text -->
+    <div class="Reminjis">
+      <img src="Reminjis-05.png" alt="Storby">
+      <div class="text">Storby</div>
     </div>
 
-<div class="ReminjiSelection">
-<h1>Choose A Reminji</h1>
-      <!-- Full-width images with number and caption text -->
-<div class="Reminjis">
-  <img src="Reminjis-05.png">
-  <div class="text">Storby</div>
-</div>
+    <div class="Reminjis">
+      <img src="Reminjis-02.png" alt="Hextopus">
+      <div class="text">Hextopus</div>
+    </div>
 
-<div class="Reminjis">
-  <img src="Reminjis-02.png">
-  <div class="text">Hextopus</div>
-</div>
+    <div class="Reminjis">
+      <img src="Reminjis-03.png" alt="Cubeilee">
+      <div class="text">Cubeilee</div>
+    </div>
 
-<div class="Reminjis">
-  <img src="Reminjis-03.png">
-  <div class="text">Cubeilee</div>
-</div>
+    <div class="Reminjis">
+      <img src="Reminjis-04.png" alt="Zorb">
+      <div class="text">Zorb</div>
+    </div>
 
-<div class="Reminjis">
-  <img src="Reminjis-04.png">
-  <div class="text">Zorb</div>
-</div>
+    <div class="Reminjis">
+      <img src="Reminjis-01.png" alt="Bunnles">
+      <div class="text">Bunnles</div>
+    </div>
 
-<div class="Reminjis">
-  <img src="Reminjis-01.png">
-  <div class="text">Bunnles</div>
-</div>
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
 
-<!-- Next and previous buttons -->
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-<br>
-
-</div>
-<script type="text/javascript">
+<!-- This section is dedicated to picking the type of schedule the user is making (since we aren't worrying about the css yet it's not a dropdown menu but it will be) -->
+    <div class="ScheduleType">
+      <h1>What kind of schedule are you making?</h1>
+      <button onclick="myFunction()" class="dropbtn">Schedule Type</button>
+      <div id="myDropdown" class="dropdown-content">
+        <ul>
+          <li>Social</li>
+          <li>Academic</li>
+          <li>Voluntary</li>
+        </ul>
+      </div>
+    </div>
+<!-- There will be a color wheel here eventually -->
+    <div class="Color Selection">
+      <h1>Pick a color for your calendar!</h1>
+    </div>
+<!-- This script controls the slide s-->
+<script>
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -79,10 +90,18 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
-
 </script>
 
+    <div id="app">
+      {{ message }}
+      <br>
+      Current Tasks: {{tasks}}
+      <br>
+      Completed Tasks: {{completed_tasks}}
     </div>
+
+</div>
+
     <script src="./dist/main.js" type="text/javascript"></script>
   </body>
 </html>
