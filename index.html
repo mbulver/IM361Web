@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Planmo- Home</title>
+    <title>Planmo Home</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+<nav>
+  <ul class="nav">
+  <li class="nav"><a class="active">Home</a></li>
+  <li class="nav"><a> News</a></li>
+  <li class="nav"><a> Contact</a></li>
+  <li class="nav"><a> About</a></li>
+</ul>
+</nav>
 
     <!-- This section is dedicated to creating a new schedule -->
 <div class="ScheduleCreation">
@@ -44,23 +53,38 @@
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-<!-- This section is dedicated to picking the type of schedule the user is making (since we aren't worrying about the css yet it's not a dropdown menu but it will be) -->
-    <div class="ScheduleType">
-      <h1>What kind of schedule are you making?</h1>
-      <button onclick="myFunction()" class="dropbtn">Schedule Type</button>
+    <!-- Selection of calendar types -->
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Calendar Type</button>
       <div id="myDropdown" class="dropdown-content">
-        <ul>
-          <li>Social</li>
-          <li>Academic</li>
-          <li>Voluntary</li>
-        </ul>
+        <a href="#home">Academic</a>
+        <a href="#about">Extra Cirricular</a>
+        <a href="#contact">Social</a>
       </div>
     </div>
-<!-- There will be a color wheel here eventually -->
-    <div class="Color Selection">
-      <h1>Pick a color for your calendar!</h1>
-    </div>
-<!-- This script controls the slide s-->
+
+    <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.dropbtn')) {
+  var dropdowns = document.getElementsByClassName("dropdown-content");
+  var i;
+  for (i = 0; i < dropdowns.length; i++) {
+    var openDropdown = dropdowns[i];
+    if (openDropdown.classList.contains('show')) {
+      openDropdown.classList.remove('show');
+    }
+  }
+}
+}
+    </script>
+<!-- This script controls the slide show-->
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -91,16 +115,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
-
-    <div id="app">
-      {{ message }}
-      <br>
-      Current Tasks: {{tasks}}
-      <br>
-      Completed Tasks: {{completed_tasks}}
-    </div>
-
-</div>
 
     <script src="./dist/main.js" type="text/javascript"></script>
   </body>
