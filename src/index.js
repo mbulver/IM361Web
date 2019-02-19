@@ -8,8 +8,8 @@ var app = new Vue({
     tasks: 0,
     completed_tasks: 0,
     reminjis_used: 0,
-    user: 'Welcome, User'
-
+    user: 'Welcome, User',
+    pageName: Home
   }
 });
 
