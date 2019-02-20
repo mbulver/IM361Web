@@ -8,17 +8,21 @@
   </head>
   <body>
     <div id="app">
-
+<head>
+  <h1.planmo>Planmo</h1>
+</head>
 <nav>
   <ul class="nav">
   <li class="nav"><a class="active">Home</a></li>
-  <li class="nav"><a> News</a></li>
+  <li class="nav"><a> Create A Schedule</a></li>
   <li class="nav"><a> Contact</a></li>
   <li class="nav"><a> About</a></li>
+  <li class="admin"> <a> Log In</a></li>
+  <li class="admin"> <a> Sign Up</a></li>
 </ul>
 </nav>
 
-    <!-- This section is dedicated to creating a new schedule -->
+  <!-- This section is dedicated to creating a new schedule -->
 <div class="ScheduleCreation">
   <!--This section is dedicated to selecting a Reminji for the new calendar -->
     <div class="ReminjiSelection">
@@ -51,10 +55,10 @@
     </div>
 
     <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
+<div class="typeslecetion">
     <!-- Selection of calendar types -->
     <div class="dropdown">
       <button onclick="myFunction()" class="dropbtn">Calendar Type</button>
@@ -64,7 +68,11 @@
         <a href="#contact">Social</a>
       </div>
     </div>
+</div>
 
+    <div class="color">
+      <p>Choose a color for your Reminji and your schedule!</p>
+    </div>
     <script>
     /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -117,6 +125,12 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
+
+<!-- The About Page  -->
+<div class="about">
+<h2>What Is Planmo?</h2>
+<p>Planmo was created work on</p>
+</div>
 
     <script src="./dist/main.js" type="text/javascript"></script>
   </div>
