@@ -9,7 +9,14 @@ var app = new Vue({
     completed_tasks: 0,
     reminjis_used: 0,
     user: 'Welcome, User',
-    pageName: Home
+    pageName: "Home",
+    pageName:"About",
+    pageName:"Contact",
+    pageName: "ScheduleCreation",
+    pageName: "LogIn",
+    pageName: "SignUp",
+    Reminjis: ["Bunnles", "Zorb", "Storby", "Cubeilee", "Hextopus"]
+
   }
 });
 
