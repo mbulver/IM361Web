@@ -9,7 +9,7 @@
   <body>
     <div id="app">
 <header>
-  <h1.planmo>Planmo</h1>
+  <img class="header" src="planmoheader.png" alt="Planmo">
 </header>
 <nav>
   <ul class="nav">
@@ -24,7 +24,7 @@
     <!-- First page -->
     <main v-bind:hidden="pageName != 'Home'">
        <!-- The Home Page  -->
-    <div class="Home">
+    <div class="home">
     <h2>Welcome To Planmo</h2>
     <p>Here you can see your master calendar all you need to do is log in!</p>
     </div>
@@ -58,101 +58,19 @@
         <p>This little critter is going to help you keep track of your schedule! Make sure you keep up to date on your tasks in order to keep it happy and healthy!</p>
               <!-- Full-width images with number and caption text -->
         <div class="Reminjis">
-          <img src="Reminjis-05.png" alt="Storby">
-          <div class="text">Storby</div>
+
         </div>
 
-        <div class="Reminjis">
-          <img src="Reminjis-02.png" alt="Hextopus">
-          <div class="text">Hextopus</div>
-        </div>
-
-        <div class="Reminjis">
-          <img src="Reminjis-03.png" alt="Cubeilee">
-          <div class="text">Cubeilee</div>
-        </div>
-
-        <div class="Reminjis">
-          <img src="Reminjis-04.png" alt="Zorb">
-          <div class="text">Zorb</div>
-        </div>
-
-        <div class="Reminjis">
-          <img src="Reminjis-01.png" alt="Bunnles">
-          <div class="text">Bunnles</div>
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
 
     <div class="typeslecetion">
-        <!-- Selection of calendar types -->
-        <div class="dropdown">
-          <button onclick="myFunction()" class="dropbtn">Calendar Type</button>
-          <div id="myDropdown" class="dropdown-content">
-            <a href="#home">Academic</a>
-            <a href="#about">Extra Cirricular</a>
-            <a href="#contact">Social</a>
-          </div>
-        </div>
+
     </div>
 
         <div class="color">
           <p>Choose a color for your Reminji and your schedule!</p>
         </div>
-        <script>
-        /* When the user clicks on the button,
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-    }
 
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-    }
-        </script>
-    <!-- This script controls the slide show-->
-    <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("Reminjis");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-    }
-    </script>
       </div>
     </main>
 
