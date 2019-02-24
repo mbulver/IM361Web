@@ -58,17 +58,29 @@
         <p>This little critter is going to help you keep track of your schedule! Make sure you keep up to date on your tasks in order to keep it happy and healthy!</p>
               <!-- Full-width images with number and caption text -->
         <div class="Reminjis">
-
+          <ul>
+            <select>
+              <option v-for="reminji in reminjis" value= "reminji"> {{ reminji }} </option>
+            </select>
         </div>
 
         </div>
 
-    <div class="typeslecetion">
+    <div class="typeselect">
+      <h1>Choose A Type Of Schedule</h1>
+      <p>Choose the purpose of the schedule, it should help when it comes to prioritizing your calendar!</p>
+      <select>
+        <option v-for="type in types" value= "type"> {{ type }} </option>
+      </select>
 
     </div>
 
         <div class="color">
+          <h1>Choose A Color</h1>
           <p>Choose a color for your Reminji and your schedule!</p>
+          <select>
+            <option v-for="color in colors" value= "color"> {{ color }} </option>
+          </select>
         </div>
 
       </div>

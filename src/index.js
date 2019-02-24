@@ -15,10 +15,13 @@ var app = new Vue({
     pageName: "ScheduleCreation",
     pageName: "LogIn",
     pageName: "SignUp",
-    Reminjis: ["Bunnles", "Zorb", "Storby", "Cubeilee", "Hextopus"],
-    Colors: ["Red", "Green","Yellow"," Blue"],
-    SchduelType: ["Academic", "Extra Cirricular", "Work","Social"]
+    reminjis: ["Bunnles", "Zorb", "Storby", "Cubeilee", "Hextopus"],
+    colors: ["Red", "Green","Yellow"," Blue"],
+    types: ["Academic", "Extra Cirricular", "Work","Social"].
+    methods: {
+      
 
+    }
   }
 });
 
