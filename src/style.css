@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+
 .show {display: block;}
 
 body
@@ -15,27 +17,36 @@ margin: 0;
   }
 }
 
+@keyframes navblow{
+  from {
+    font-size: 1em;
+  }
+  to {
+    font-size: 1.4em;
+  }
+}
+
 .ScheduleCreation
 {
-animation-duration: 3s;
+animation-duration: 2s;
 animation-name: fadein;
 }
 
 .home
 {
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-name: fadein;
 }
 
 .about
 {
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-name: fadein;
 }
 
 .contact
 {
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-name: fadein;
 }
 
@@ -56,18 +67,23 @@ ul.nav {
 li.nav a {
   display: block;
   color: #000;
-  padding: 8px 16px;
+  padding: 2% 4%;
   text-decoration: none;
+  font-family: 'Coiny', cursive;
 }
 
 li.nav a.active {
   background-color: #3A60FF;
   color: white;
+  animation-name: navblow;
+  animation-duration: 1.5;
 }
 
 li.nav a:hover:not(.active) {
   background-color: #4985FF;
   color: white;
+  animation-name: navblow;
+  animation-duration: 1.5;
 }
 
 li.nav {

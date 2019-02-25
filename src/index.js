@@ -16,13 +16,12 @@ var app = new Vue({
     pageName: "LogIn",
     pageName: "SignUp",
     reminjis: ["Bunnles", "Zorb", "Storby", "Cubeilee", "Hextopus"],
+    selectedreminji: null,
     colors: ["Red", "Green","Yellow"," Blue"],
-    types: ["Academic", "Extra Cirricular", "Work","Social"].
-    methods: {
-      
-
+    selectedcolor: null,
+    types: ["Academic", "Extra Cirricular", "Work","Social"]
     }
   }
-});
+);
 
 window.app = app;
