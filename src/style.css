@@ -22,7 +22,7 @@ margin: 0;
     font-size: 1em;
   }
   to {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 }
 
@@ -58,8 +58,6 @@ animation-name: fadein;
 ul.nav {
   background-color: #C4F4FF;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   border: 4px solid white;
 }
@@ -75,8 +73,6 @@ li.nav a {
 li.nav a.active {
   background-color: #3A60FF;
   color: white;
-  animation-name: navblow;
-  animation-duration: 1.5s;
 }
 
 li.nav a:hover:not(.active) {
@@ -90,9 +86,9 @@ li.nav {
 display: block;
 color: white;
 text-align: center;
-padding: 14px 16px;
 text-decoration: none;
 float: left;
+width: 15%;
 }
 
 li.admin {
@@ -106,4 +102,11 @@ li.admin {
   margin-left: 40%;
   width: 20%;
   height: 20%;
+}
+
+.reminjiview
+{
+  float: right;
+  width: 500px;
+  height: 500px;
 }
