@@ -16,11 +16,17 @@ var app = new Vue({
     pageName: "LogIn",
     pageName: "SignUp",
     reminjis: ["Bunnles", "Zorb", "Storby", "Cubeilee", "Hextopus"],
-    selectedreminji: null,
-    colors: ["Red", "Green","Yellow"," Blue"],
-    selectedcolor: null,
+    selectedreminji: "Bunnles",
+    colors: ["Red", "Green","Yellow","Blue"],
+    selectedcolor: "Red",
     types: ["Academic", "Extra Cirricular", "Work","Social"]
+  },
+  computed:{
+    reminjiview: function ()
+    {
+      return "Reminjis_" + this.selectedreminji + this.selectedcolor + ".png";
     }
+  }
   }
 );
 

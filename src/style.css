@@ -67,7 +67,7 @@ ul.nav {
 li.nav a {
   display: block;
   color: #000;
-  padding: 2% 4%;
+  padding: 2%;
   text-decoration: none;
   font-family: 'Coiny', cursive;
 }
@@ -76,14 +76,14 @@ li.nav a.active {
   background-color: #3A60FF;
   color: white;
   animation-name: navblow;
-  animation-duration: 1.5;
+  animation-duration: 1.5s;
 }
 
 li.nav a:hover:not(.active) {
   background-color: #4985FF;
   color: white;
   animation-name: navblow;
-  animation-duration: 1.5;
+  animation-duration: 1.5s;
 }
 
 li.nav {
