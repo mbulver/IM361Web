@@ -19,7 +19,8 @@ var app = new Vue({
     selectedreminji: "Bunnles",
     colors: ["Red", "Green","Yellow","Blue"],
     selectedcolor: "Red",
-    types: ["Academic", "Extra Cirricular", "Work","Social"]
+    types: ["Academic", "Extra Cirricular", "Work","Social"],
+    schedulename: "schedule"
   },
   computed:{
     reminjiview: function ()

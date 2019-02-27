@@ -26,7 +26,7 @@
        <!-- The Home Page  -->
     <div class="home">
     <h2>Welcome To Planmo</h2>
-    <p>Here you can see your master calendar all you need to do is log in!</p>
+    <div calendar class="calendar" id="calendar"></div>
     </div>
   </main>
 
@@ -64,15 +64,6 @@
         </div>
         </div>
 
-    <div class="typeselect">
-      <h1>Choose A Type Of Schedule</h1>
-      <p>Choose the purpose of the schedule, it should help when it comes to prioritizing your calendar!</p>
-      <select>
-        <option v-for="type in types" value= "type"> {{ type }} </option>
-      </select>
-
-    </div>
-
         <div class="color" >
           <h1>Choose A Color</h1>
           <p>Choose a color for your Reminji and your schedule!</p>
@@ -81,6 +72,23 @@
           </select>
         </div>
 
+    <div class="typeselect">
+      <h1>Choose A Type Of Schedule</h1>
+      <p>Choose the purpose of the schedule, it should help when it comes to prioritizing your calendar!</p>
+      <select>
+        <option v-for="type in types" value= "type"> {{ type }} </option>
+      </select>
+
+      <div class="schedulename">
+        <h1>Name Your Schedule</h1>
+        <p>This is to help you keep track of what it's for!</p>
+        <form class="" action="index.html" method="post">
+          <input type="text" name="usrname">
+          <input type="submit">
+        </form>
+      </div>
+
+    </div>
       </div>
 
       <div class="reminjiwindow">
