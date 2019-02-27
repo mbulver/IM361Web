@@ -15,6 +15,7 @@ var app = new Vue({
     pageName: "ScheduleCreation",
     pageName: "LogIn",
     pageName: "SignUp",
+    pageName: "Schedules",
     reminjis: ["Bunnles", "Zorb", "Storby", "Cubilee", "Hexapus"],
     selectedreminji: "Bunnles",
     colors: ["Red", "Green","Yellow","Blue"],
