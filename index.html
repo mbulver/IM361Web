@@ -53,6 +53,10 @@
       <!-- This section is dedicated to creating a new schedule -->
     <div class="ScheduleCreation">
       <!--This section is dedicated to selecting a Reminji for the new calendar -->
+      <div class="reminjiwindow">
+        <img v-bind:src="reminjiview" alt="Your Reminji" class="reminjiview">
+      </div>
+
         <div class="ReminjiSelection">
         <h1>Choose A Reminji</h1>
         <p>This little critter is going to help you keep track of your schedule! Make sure you keep up to date on your tasks in order to keep it happy and healthy!</p>
@@ -89,10 +93,6 @@
       </div>
 
     </div>
-      </div>
-
-      <div class="reminjiwindow">
-        <img v-bind:src="reminjiview" alt="Your Reminji" class="reminjiview">
       </div>
 
     </main>
