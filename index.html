@@ -22,13 +22,36 @@
 </ul>
 </nav>
     <!-- First page -->
-    <main v-bind:hidden="pageName != 'Home'">
+<main v-bind:hidden="pageName != 'Home'">
        <!-- The Home Page  -->
-    <div class="home">
+  <div class="home">
     <h2>Welcome To Planmo</h2>
-    <div calendar class="calendar" id="calendar"></div>
+    <h3>current schedules</h3>
+    <ul>
+      <li v-for="schedule in schedules">
+        <p>Reminji:{{selectedreminji}}</p>
+        <p>Name:{{}}</p>
+        <p> <button v-onclick=addTodo(schedule.currenttodo)> </button> </p>
+        <input v-model="currentTodo">
+        <ul>
+          <li v-for="todo in schedudle.todo"></li>
+          <p> {{todo}} </p>
+          <p> <button> </p>
+        </ul>
+      </li>
+    </ul>
+    <div id="myDIV" class="todohead">
+
+    <h2 v-bind:class="schedulename">{{schedulename}}</h2>
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>
+    <ul class="todolist">
+      {{tasks}}
+    </ul>
+
     </div>
-  </main>
+  </div>
+</main>
 
     <!-- Second page -->
     <main v-bind:hidden="pageName != 'About'">
@@ -87,8 +110,9 @@
         <h1>Name Your Schedule</h1>
         <p>This is to help you keep track of what it's for!</p>
         <form class="schedname" action="index.html" method="post">
-          <input type="text" name="usrname">
+          <input v-model=type="text" name="todoname">
           <input type="submit">
+
         </form>
       </div>
 

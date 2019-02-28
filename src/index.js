@@ -21,15 +21,36 @@ var app = new Vue({
     colors: ["Red", "Green","Yellow","Blue"],
     selectedcolor: "Red",
     types: ["Academic", "Extra Cirricular", "Work","Social"],
-    schedulename: "schedule"
+    selectedtype: "Academic",
+    schedulename: "schedule",
+    schedules: [],
+    currentobject:[]
   },
   computed:{
     reminjiview: function ()
     {
       return "Reminjis_" + this.selectedreminji + this.selectedcolor + ".png";
     }
-  }
-  }
-);
+  },
+  methods:{
+    createschedule:function (reminjiview, schedulename)
+    {
+      this.schedules.push({
+        remnji: reminjiview,
+        name: schedulename,
+        todos:[]
+      });
+    },
+    addTodo:function(){
+      schedule.todos.push(todo);
 
+},
+  takeawayTodo:function(){
+            var index = schedule.todos.indexOf(todo);
+        if (index >= 0) {
+          schedule.todos.splice(index, 1);
+        }
+      }
+    }
+});
 window.app = app;
