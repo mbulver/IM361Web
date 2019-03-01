@@ -33,24 +33,24 @@ var app = new Vue({
     }
   },
   methods:{
-    createschedule:function (reminjiview, schedulename)
-    {
-      this.schedules.push({
-        remnji: reminjiview,
-        name: schedulename,
-        todos:[]
-      });
-    },
-    addTodo:function(){
-      schedule.todos.push(todo);
+  createSchedule: function(reminjiview, schedulename, selectedcolor,) {
+    this.schedules.push({
+      reminji: reminjiview,
+      name: schedulename,
+      color: selectedcolor,
+      todos: []
+    });
+  },
+  addTodo: function(schedule, todo) {
+    schedule.todos.push(todo);
+  },
+  removeTodo: function(schedule, todo) {
+    var index = schedule.todos.indexOf(todo);
 
-},
-  takeawayTodo:function(){
-            var index = schedule.todos.indexOf(todo);
-        if (index >= 0) {
-          schedule.todos.splice(index, 1);
-        }
+    if (index >= 0) {
+      schedule.todos.splice(index, 1);
       }
     }
+  }
 });
 window.app = app;

@@ -19,60 +19,45 @@
   <li class="nav"><a  href="#About" v-on:click= "pageName = 'About'"> About</a></li>
   <li class="admin"> <a  href="#LogIn" v-on:click= "pageName = 'LogIn'"> Log In</a></li>
   <li class="admin"> <a  href="#SignUp" v-on:click= "pageName = 'SignUp'"> Sign Up</a></li>
-</ul>
+  </ul>
 </nav>
     <!-- First page -->
 <main v-bind:hidden="pageName != 'Home'">
        <!-- The Home Page  -->
   <div class="home">
-    <h2>Welcome To Planmo</h2>
-    <h3>current schedules</h3>
     <ul>
-      <li v-for="schedule in schedules">
-        <p>Reminji:{{selectedreminji}}</p>
-        <p>Name:{{}}</p>
-        <p> <button v-onclick=addTodo(schedule.currenttodo)> </button> </p>
-        <input v-model="currentTodo">
-        <ul>
-          <li v-for="todo in schedudle.todo"></li>
-          <p> {{todo}} </p>
-          <p> <button> </p>
+          <li v-for="schedule in schedules">
+            <p>Reminj: {{ schedule.reminji }}</p>
+            <P>Name: {{ schedule.name }}</p>
+            <p><input v-model="currentTodo"></p>
+            <p><button v-on:click="addTodo(schedule, currentTodo)">Add</button></p>
+            <ul>
+              <li v-for="todo in schedule.todos">
+                <p>{{ todo }}</p>
+                <p><button v-on:click="removeTodo(schedule, todo)">Remove</button</p>
+              </li>
+            </ul>
+          </li>
+
         </ul>
-      </li>
-    </ul>
-    <div id="myDIV" class="todohead">
-
-    <h2 v-bind:class="schedulename">{{schedulename}}</h2>
-    <input type="text" id="myInput" placeholder="Title...">
-    <span onclick="newElement()" class="addBtn">Add</span>
-    <ul class="todolist">
-      {{tasks}}
-    </ul>
-
     </div>
-  </div>
 </main>
 
     <!-- Second page -->
     <main v-bind:hidden="pageName != 'About'">
       <!-- The About Page  -->
       <div class="about">
-      <h2>What Is Planmo?</h2>
-      <p>Planmo was created in order to make time management fun! I want to encourage users to look forward to managing their time and becoming actively engaged with their schedule!</p>
       </div>
     </main>
 
     <main v-bind:hidden="pageName != 'Contact'">
       <!-- The Contact Page  -->
       <div class="contact">
-      <h2>Having Trouble?</h2>
-      <p>Please email support@planmo.com</p>
-      <h2>Forgot Password?</h2>
-      <p>You should probs just make a new account tbh :/</p>
       </div>
     </main>
 
     <main v-bind:hidden="pageName != 'ScheduleCreation'">
+      <form v-model="scheduleCreation" class="schedname" action="index.html">
       <!-- This section is dedicated to creating a new schedule -->
     <div class="ScheduleCreation">
       <!--This section is dedicated to selecting a Reminji for the new calendar -->
@@ -109,11 +94,10 @@
       <div class="schedulename">
         <h1>Name Your Schedule</h1>
         <p>This is to help you keep track of what it's for!</p>
-        <form class="schedname" action="index.html" method="post">
-          <input v-model=type="text" name="todoname">
-          <input type="submit">
-
-        </form>
+          <input type="text" v-model= "schedulename">
+          <!-- <input v-model=type="text" name="todoname"> -->
+        <button v-on:click="scheduleCreation"> Finish </button>
+          </form>
       </div>
 
     </div>
