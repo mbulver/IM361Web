@@ -27,8 +27,8 @@
   <div class="home">
     <ul>
           <li v-for="schedule in schedules">
-            <p>Reminj: {{ schedule.reminji }}</p>
-            <P>Name: {{ schedule.name }}</p>
+            <p>Reminj: {{ reminjiview }} </p>
+            <P>Name: {{ schedulename }}</p>
             <p><input v-model="currentTodo"></p>
             <p><button v-on:click="addTodo(schedule, currentTodo)">Add</button></p>
             <ul>
@@ -94,9 +94,9 @@
       <div class="schedulename">
         <h1>Name Your Schedule</h1>
         <p>This is to help you keep track of what it's for!</p>
-          <input type="text" v-model= "schedulename">
+          <input type="text" v-model="schedulename">
           <!-- <input v-model=type="text" name="todoname"> -->
-        <button v-on:click="scheduleCreation"> Finish </button>
+      <button v-on:click="createSchedule"> <a href="#Home" v-on:click="pageName = 'Home'"> Finish </a> </button> 
           </form>
       </div>
 
