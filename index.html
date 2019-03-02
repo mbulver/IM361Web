@@ -25,9 +25,11 @@
 <main v-bind:hidden="pageName != 'Home'">
        <!-- The Home Page  -->
   <div class="home">
-    <ul>
+    <ul class="currentschedules">
           <li v-for="schedule in schedules">
-            <P>Name: {{ schedulename }}</p>
+            <p>{{schedule.reminji}}</p>
+            <P>{{ schedule.name }}</p>
+              <p>{{schedule.color}}</p>
             <p><input v-model="currentTodo"></p>
             <p><button v-on:click="addTodo(schedule, currentTodo)">Add</button></p>
             <ul>
@@ -37,7 +39,6 @@
               </li>
             </ul>
           </li>
-
         </ul>
     </div>
 </main>
@@ -90,12 +91,12 @@
         <option v-for="type in types" value= "type"> {{ type }} </option>
       </select>
 
-      <div class="schedulename">
+      <div class="currentName">
         <h1>Name Your Schedule</h1>
         <p>This is to help you keep track of what it's for!</p>
-          <input type="text" v-model="schedulename">
+          <input type="text" v-model="currentName">
           <!-- <input v-model=type="text" name="todoname"> -->
-      <button v-on:click="createSchedule"> <a href="#Home" v-on:click="pageName = 'Home'"> Finish </a></button>
+      <button v-on:click="createSchedule(selectedreminji, currentName)"> <a href="#Home" v-on:click="pageName = 'Home'"> Finish </a></button>
           </form>
       </div>
 

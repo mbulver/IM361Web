@@ -22,8 +22,8 @@ var app = new Vue({
     selectedcolor: "Red",
     types: ["Academic", "Extra Cirricular", "Work","Social"],
     selectedtype: "Academic",
-    schedulename: "schedule",
     schedules: [],
+    currentName: "",
     currentobject:[]
   },
   computed:{
@@ -33,10 +33,10 @@ var app = new Vue({
     }
   },
   methods:{
-  createSchedule: function(reminjiview, schedulename, selectedcolor,) {
+  createSchedule: function(reminjiview, currentName, selectedcolor,) {
     this.schedules.push({
       reminji: reminjiview,
-      name: schedulename,
+      name: currentName,
       color: selectedcolor,
       todos: []
     });
