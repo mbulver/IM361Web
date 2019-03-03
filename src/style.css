@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Coiny');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Overpass');
+
 
 .show {display: block;}
 
@@ -26,6 +29,10 @@ margin: 0;
   }
 }
 
+h3 {
+  margin: 0;
+}
+
 .ScheduleCreation
 {
 animation-duration: 2s;
@@ -38,21 +45,39 @@ animation-name: fadein;
   animation-name: fadein;
 }
 
-.about
-{
-  animation-duration: 2s;
-  animation-name: fadein;
+li {
+list-style: none;
 }
 
-.contact
-{
-  animation-duration: 2s;
-  animation-name: fadein;
+ul {
+  margin: 0;
 }
 
-*
-{
-  font-family: sans-serif;
+ul,h1,h2,h3,select,input,button {
+  font-family: 'Fredoka One', cursive;
+  border-radius: 4px;
+}
+
+select,input,button {
+  font-size: 1.2em;
+  padding: 0;
+  border: 1px solid #4055FF;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+button,input {
+  padding: 1px 5px 1px 5px;
+}
+
+p {
+font-family: 'Overpass', sans-serif;
+}
+
+input{
+  margin-left: 0px;
 }
 
 ul.nav {
@@ -98,24 +123,129 @@ li.admin {
   padding: 14px 16px;
 }
 
-.header
-{
+.header {
   margin-left: 40%;
   width: 20%;
   height: 20%;
 }
 
-.reminjiview
-{
-  float: right;
+.reminjiview {
+  clear: left;
   width: 5in;
   height: 5in;
-  margin-right: 5%;
-  clear: left;
+  float: none;
+  display:block;
+  margin: auto;
+  top:0;
+  bottom:0;
+  margin-top: 10%;
 }
 
-.reminjiwindow
-{
+.reminjiwindow {
   background-color: transparent;
   background-repeat: no-repeat;
+  background-size: cover;
+  float: right;
+  margin-right: 5%;
+  background-position: center;
+  width: 6in;
+  height: 6in;
+  clear: none;
+}
+
+.ScheduleCreation
+{
+  display: block;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  width: 30%;
+  margin-left: 5%;
+  float: left;
+  clear: none;
+}
+
+.currentschedules
+{
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+li.currentschedules {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+/* Style the schedule title */
+.schednames {
+  text-align: left;
+}
+
+/* Style the input */
+.addtask {
+  margin: 0;
+  width: 25%;
+  padding: 5px;
+  float: left;
+}
+
+/* Style the "Add" button */
+.add {
+  text-align: center;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.nosched{
+  margin-left: 2%;
+}
+
+.schedreminji {
+  width: 4in;
+  height: 4in;
+  float: right;
+  display:block;
+  margin-right: 20%;
+
+}
+.schedtitle {
+  margin-left: 5%;
+  list-style: none;
+}
+.schedtasks
+{
+  margin-left: 7%;
+  width: 15%;
+  height: auto;
+  margin: 0;
+
+}
+
+.schedtasks {
+  background: #eee;
+  width: 25%;
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 0;
+  height: auto;
+}
+.schedtasks:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+.remove {
+  display: inline-block;
+  float: right;
+  font-size: 12pt;
+}
+
+.schedselect {
+  margin-top: 2%;
+  margin-left: 5%;
+  border: 2px solid #4055FF;
+  border-radius: 4px;
 }

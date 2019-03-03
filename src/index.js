@@ -10,12 +10,6 @@ var app = new Vue({
     reminjis_used: 0,
     user: 'Welcome, User',
     pageName: "Home",
-    pageName:"About",
-    pageName:"Contact",
-    pageName: "ScheduleCreation",
-    pageName: "LogIn",
-    pageName: "SignUp",
-    pageName: "Schedules",
     reminjis: ["Bunnles", "Zorb", "Storby", "Cubilee", "Hexapus"],
     selectedreminji: "Bunnles",
     colors: ["Red", "Green","Yellow","Blue"],
@@ -24,12 +18,19 @@ var app = new Vue({
     selectedtype: "Academic",
     schedules: [],
     currentName: "",
-    currentobject:[]
+    selectedschedule:"",
+    currentTodo: ""
   },
   computed:{
     reminjiview: function ()
     {
       return "Reminjis_" + this.selectedreminji + this.selectedcolor + ".png";
+    },
+    numberOfSchedules: function() {
+      return this.schedules.length;
+    },
+    hasSchedules: function() {
+      return this.schedules.length > 0;
     }
   },
   methods:{
@@ -37,9 +38,9 @@ var app = new Vue({
     this.schedules.push({
       reminji: reminjiview,
       name: currentName,
-      color: selectedcolor,
       todos: []
     });
+    this.pageName = 'Home';
   },
   addTodo: function(schedule, todo) {
     schedule.todos.push(todo);
