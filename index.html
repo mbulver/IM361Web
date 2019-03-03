@@ -1,102 +1,116 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Planmo Home</title>
+    <title>Planmo</title>
+    <link rel="icon" href="icon-23.png">
   </head>
+
+
   <body>
     <div id="app">
-<header>
-  <img class="header" src="planmoheader.png" alt="Planmo">
-</header>
+<!-- contains all of the header contents -->
+      <header>
+        <img class="header" src="planmoheader.png" alt="Planmo">
+      </header>
+
+<!-- contains all the contents of the nav bar -->
 <nav>
   <ul class="nav">
-  <li class="nav"><a  href="#Home" v-on:click= "pageName = 'Home'">Home</a></li>
-  <li class="nav"><a  href="#ScheduleCreation" v-on:click= "pageName = 'ScheduleCreation'"> Create A Schedule</a></li>
+    <li class="nav"><a  href="#Home" v-on:click= "pageName = 'Home'">Home</a></li>
+    <li class="nav"><a  href="#ScheduleCreation" v-on:click= "pageName = 'ScheduleCreation'"> Create A Schedule</a></li>
   </ul>
 </nav>
-    <!-- First page -->
+
+<!-- Home Page is hidden unless the right requirements are met-->
 <main v-bind:hidden="pageName != 'Home'">
-       <!-- The Home Page  -->
-  <div class="home" v-model="selectedschedule">
+<!-- contains all of the elements of the home page -->
+<div class="home" v-model="selectedschedule">
+
+<!-- what's displayed when the user has made a schedule -->
     <div class="allschedules" v-if="hasSchedules">
-    <select class="schedselect" v-model="selectedschedule">
-      <option v-for="schedule in schedules" v-bind:value="schedule"> {{ schedule.name }} </option>
-    </select>
-    <ul class="currentschedules">
+
+<!-- allows users to select the schedule they want to see -->
+      <select class="schedselect" v-model="selectedschedule">
+        <option v-for="schedule in schedules" v-bind:value="schedule"> {{ schedule.name }} </option>
+      </select>
+        <ul class="currentschedules">
           <li class="schedtitle" v-for="schedule in schedules" v-bind:hidden="selectedschedule != schedule">
             <img class="schedreminji" v-bind:src="schedule.reminji" alt="Your Reminji">
             <h2 class="schednames">{{ schedule.name }}</h2>
+
+<!-- allows users to add tasks -->
             <p><input class="addtask" v-model="currentTodo"></p>
             <p><button v-on:click="addTodo(schedule, currentTodo)" class="add">Add</button></p>
             <ul class="schedtasklist">
               <li class="schedtasks" v-for="todo in schedule.todos">
+
+<!-- allows users to remove tasks -->
                 <h3>{{ todo }} <button v-on:click="removeTodo(schedule, todo)" class="remove">Completed!</button> </h3>
               </li>
             </ul>
           </li>
         </ul>
-        </div>
-      <div class="nosched" v-else>
-        <h2>Oops! Looks like you haven't made a schedule yet, head on over to <a  href="#ScheduleCreation" v-on:click= "pageName = 'ScheduleCreation'"> Create A Schedule</a> to get started </h2>
-      </div>
     </div>
+
+<!-- what's displayed if the user has no schedules -->
+    <div class="nosched" v-else>
+      <h2>Oops! Looks like you haven't made a schedule yet, head on over to <a  href="#ScheduleCreation" v-on:click= "pageName = 'ScheduleCreation'"> Create A Schedule</a> to get started </h2>
+    </div>
+</div>
 </main>
 
-    <!-- Second page -->
-    <main v-bind:hidden="pageName != 'About'">
-      <!-- The About Page  -->
-      <div class="about">
-      </div>
-    </main>
 
-    <main v-bind:hidden="pageName != 'ScheduleCreation'">
-      <!-- <form v-model="scheduleCreation" class="schedname" action="index.html"> -->
-      <!-- This section is dedicated to creating a new schedule -->
+<main v-bind:hidden="pageName != 'ScheduleCreation'">
 
-  <div class="ScheduleCreation">
-      <!--This section is dedicated to selecting a Reminji for the new calendar -->
+<!-- Contatins all of the items in the schedule creation paragraph -->
+<div class="ScheduleCreation">
+
+<!--This section is dedicated to selecting a Reminji for the new calendar -->
     <div class="ReminjiSelection">
       <h1>Choose A Reminji</h1>
-        <p>This little critter is going to help you keep track of your schedule! Make sure you keep up to date on your tasks in order to keep it happy and healthy!</p>
-          <div class="Reminjis">
-              <select v-model="selectedreminji">
-                <option v-for="reminji in reminjis" v-bind:value="reminji"> {{ reminji }} </option>
-              </select>
-          </div>
-      </div>
-
-        <div class="colorselect" >
-          <h1>Choose A Color</h1>
-          <p>Choose a color for your Reminji!</p>
-          <select v-model="selectedcolor">
-            <option v-for="color in colors" v-bind:value="color"> {{ color }} </option>
-          </select>
+      <p>This little critter is going to help you keep track of your schedule! Make sure you keep up to date on your tasks in order to keep it happy and healthy!</p>
+        <div class="Reminjis">
+            <select v-model="selectedreminji">
+              <option v-for="reminji in reminjis" v-bind:value="reminji"> {{ reminji }} </option>
+            </select>
         </div>
+    </div>
 
+<!-- the color selection section -->
+    <div class="colorselect" >
+      <h1>Choose A Color</h1>
+      <p>Choose a color for your Reminji!</p>
+        <select v-model="selectedcolor">
+          <option v-for="color in colors" v-bind:value="color"> {{ color }} </option>
+        </select>
+    </div>
+
+<!-- the type selection section -->
     <div class="typeselect">
       <h1>Choose A Type Of Schedule</h1>
       <p>Choose the purpose of the schedule, it should help when it comes to prioritizing your calendar!</p>
-      <select>
-        <option v-for="type in types" value= "type"> {{ type }} </option>
-      </select>
+        <select>
+          <option v-for="type in types" value= "type"> {{ type }} </option>
+        </select>
     </div>
 
-      <div class="nameselect">
+<!-- the name selection section-->
+    <div class="nameselect">
         <h1>Name Your Schedule</h1>
         <p>This is to help you keep track of what it's for!</p>
-          <input type="text" v-model="currentName">
-          <!-- <input v-model=type="text" name="todoname"> -->
-      <button v-on:click="createSchedule(reminjiview, currentName)"> Finish </button>
-          <!-- </form> -->
-      </div>
-      </div>
+        <input type="text" v-model="currentName">
+        <button v-on:click="createSchedule(reminjiview, currentName)"> Finish </button>
+    </div>
+</div>
 
-      <div class="reminjiwindow" v-bind:style="{ backgroundImage: 'url(reminjiviewbg.png)'}">
-        <img v-bind:src="reminjiview" alt="Your Reminji" class="reminjiview">
-      </div>
-    </main>
+<!-- Shows the selected reminji during creation -->
+<div class="reminjiwindow" v-bind:style="{ backgroundImage: 'url(reminjiviewbg.png)'}">
+  <img v-bind:src="reminjiview" alt="Your Reminji" class="reminjiview">
+</div>
+</main>
 
   </div>
     <script src="./dist/main.js" type="text/javascript"></script>

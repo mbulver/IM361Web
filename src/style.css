@@ -1,16 +1,19 @@
+/* Max Bulver */
+/* I followed tutorials on W3Schools for the nav bar and to do lists */
+/* imports the fonts I want from Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Coiny');
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 @import url('https://fonts.googleapis.com/css?family=Overpass');
 
 
 .show {display: block;}
-
+/* sets the bg color and margins for the body */
 body
 {
 background-color: #C4F4FF;
 margin: 0;
 }
-
+/* creates the fade in animation */
 @keyframes fadein {
   from {
     opacity: 0;
@@ -19,7 +22,7 @@ margin: 0;
     opacity: inherit;
   }
 }
-
+/* creates the nav bar animation */
 @keyframes navblow{
   from {
     font-size: 1em;
@@ -29,57 +32,64 @@ margin: 0;
   }
 }
 
+/* styles all h3 elements */
 h3 {
   margin: 0;
+  font-size: 1.3em;
 }
 
+/* animates elements in the ScheduleCreation class */
 .ScheduleCreation
 {
 animation-duration: 2s;
 animation-name: fadein;
 }
 
+/* animates elements in the home class */
 .home
 {
   animation-duration: 2s;
   animation-name: fadein;
 }
 
+/* styles all li elements */
 li {
 list-style: none;
 }
 
+/* styles all ul elements */
 ul {
   margin: 0;
 }
 
+/* styles all ul,h1,h2,h3,select, and button elements */
 ul,h1,h2,h3,select,input,button {
   font-family: 'Fredoka One', cursive;
   border-radius: 4px;
 }
 
+/* styles all select,input, and button elements */
 select,input,button {
   font-size: 1.2em;
   padding: 0;
   border: 1px solid #4055FF;
 }
-
-h3 {
-  font-size: 1.3em;
-}
-
+/* gives the same padding to button and input elements */
 button,input {
   padding: 1px 5px 1px 5px;
 }
 
+/* styles all p elements */
 p {
 font-family: 'Overpass', sans-serif;
 }
 
+/* stlyes all input elements */
 input{
   margin-left: 0px;
 }
 
+/* stlyes the ul elements in the nav class */
 ul.nav {
   background-color: #C4F4FF;
   list-style-type: none;
@@ -87,6 +97,7 @@ ul.nav {
   border: 4px solid white;
 }
 
+/* stlyes the li and a elements in the nav class and the psuedoclasses the css can provide */
 li.nav a {
   display: block;
   color: #000;
@@ -94,12 +105,10 @@ li.nav a {
   text-decoration: none;
   font-family: 'Coiny', cursive;
 }
-
 li.nav a.active {
   background-color: #3A60FF;
   color: white;
 }
-
 li.nav a:hover:not(.active) {
   background-color: #4985FF;
   color: white;
@@ -108,6 +117,7 @@ li.nav a:hover:not(.active) {
   border-radius: 5px;
 }
 
+/* styles the li elements in the nav class */
 li.nav {
 display: block;
 color: white;
@@ -117,18 +127,14 @@ float: left;
 width: 15%;
 }
 
-li.admin {
-  float: right;
-  display: block;
-  padding: 14px 16px;
-}
-
+/* stlyes the header class */
 .header {
   margin-left: 40%;
   width: 20%;
   height: 20%;
 }
 
+/* stlyes the reminjiview class */
 .reminjiview {
   clear: left;
   width: 5in;
@@ -141,6 +147,7 @@ li.admin {
   margin-top: 10%;
 }
 
+/* stlyes the reminjiwindow class */
 .reminjiwindow {
   background-color: transparent;
   background-repeat: no-repeat;
@@ -153,6 +160,7 @@ li.admin {
   clear: none;
 }
 
+/* stlyes the ScheduleCreation class */
 .ScheduleCreation
 {
   display: block;
@@ -165,13 +173,14 @@ li.admin {
   clear: none;
 }
 
+/* styles the currentSchedules class */
 .currentschedules
 {
   margin: 0;
   padding: 0;
 }
 
-/* Style the list items */
+/* Stylizes the the currentschedules list items */
 li.currentschedules {
   cursor: pointer;
   position: relative;
@@ -181,12 +190,12 @@ li.currentschedules {
   transition: 0.2s;
 }
 
-/* Style the schedule title */
+/* Styles the schedname class */
 .schednames {
   text-align: left;
 }
 
-/* Style the input */
+/* Styles the addtask class */
 .addtask {
   margin: 0;
   width: 25%;
@@ -194,55 +203,58 @@ li.currentschedules {
   float: left;
 }
 
-/* Style the "Add" button */
+/* Style the add button */
 .add {
   text-align: center;
   cursor: pointer;
   margin-left: 5px;
 }
 
-.nosched{
+/* styles the nosched class */
+.nosched {
   margin-left: 2%;
 }
 
+/* Styles the schedreminji class to display the image how it's needed */
 .schedreminji {
   width: 4in;
   height: 4in;
   float: right;
   display:block;
   margin-right: 20%;
-
 }
+
+/* Styles the schedtitle class */
 .schedtitle {
   margin-left: 5%;
   list-style: none;
 }
-.schedtasks
-{
+
+/* Styles the schetasks class */
+.schedtasks {
   margin-left: 7%;
-  width: 15%;
   height: auto;
   margin: 0;
-
-}
-
-.schedtasks {
   background: #eee;
   width: 25%;
   font-family: 'Fredoka One', cursive;
   margin-bottom: 0;
   height: auto;
+  border: 1px solid black;
+
 }
 .schedtasks:nth-child(odd) {
   background: #f9f9f9;
 }
 
+/* Styles the remove class */
 .remove {
   display: inline-block;
   float: right;
   font-size: 12pt;
 }
 
+/* Styles the schedselect class */
 .schedselect {
   margin-top: 2%;
   margin-left: 5%;
